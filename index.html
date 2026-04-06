@@ -72,11 +72,6 @@
             0%, 100% { opacity: 0.4; }
             50% { opacity: 0.8; }
         }
-        @keyframes gradient-shift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
@@ -348,105 +343,6 @@
         .float-card-3 { top: 55%; right: -12%; animation-delay: 2.5s; }
         .float-card-3 .icon-circle { background: rgba(236, 72, 153, 0.15); }
 
-        /* ========== TRUST BAR ========== */
-        .trust-bar {
-            padding: 60px 0;
-            border-top: 1px solid rgba(255,255,255,0.04);
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-        }
-        .trust-bar p {
-            text-align: center;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: #52525b;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            margin-bottom: 32px;
-        }
-        .trust-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 48px;
-            flex-wrap: wrap;
-        }
-        .trust-logo {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #3f3f46;
-            letter-spacing: 0.03em;
-            transition: color 0.3s;
-        }
-        .trust-logo:hover { color: #71717a; }
-
-        /* ========== SERVICES ========== */
-        .services { padding: 120px 0; }
-        .services-header {
-            text-align: center;
-            margin-bottom: 64px;
-        }
-        .services-header .section-subtitle { margin: 0 auto; }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-        .service-card {
-            background: rgba(24, 24, 27, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 40px 32px;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #6366f1, transparent);
-            opacity: 0;
-            transition: opacity 0.4s;
-        }
-        .service-card:hover {
-            border-color: rgba(99, 102, 241, 0.2);
-            transform: translateY(-4px);
-            background: rgba(24, 24, 27, 0.8);
-        }
-        .service-card:hover::before { opacity: 1; }
-        .service-icon {
-            width: 56px; height: 56px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 24px;
-        }
-        .service-card h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #fafafa;
-            margin-bottom: 12px;
-        }
-        .service-card p {
-            font-size: 0.95rem;
-            color: #a1a1aa;
-            line-height: 1.7;
-        }
-        .service-card .learn-more {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            margin-top: 20px;
-            font-size: 0.88rem;
-            font-weight: 600;
-            color: #8b5cf6;
-            transition: gap 0.3s;
-        }
-        .service-card:hover .learn-more { gap: 12px; }
-
         /* ========== HOW IT WORKS ========== */
         .process { padding: 120px 0; background: rgba(24, 24, 27, 0.3); }
         .process-header { text-align: center; margin-bottom: 72px; }
@@ -502,30 +398,7 @@
             line-height: 1.6;
         }
 
-        /* ========== STATS ========== */
-        .stats { padding: 80px 0; }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 32px;
-        }
-        .stat {
-            text-align: center;
-            padding: 32px 16px;
-        }
-        .stat-number {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 800;
-            line-height: 1;
-            margin-bottom: 8px;
-        }
-        .stat-label {
-            font-size: 0.9rem;
-            color: #71717a;
-            font-weight: 500;
-        }
-
-        /* ========== WHY INOVARA ========== */
+        /* ========== WHY INORA ========== */
         .why { padding: 120px 0; }
         .why .container {
             display: grid;
@@ -674,41 +547,6 @@
             font-weight: 600;
             color: #4ade80;
         }
-        @media (max-width: 1024px) {
-            .consult-wrapper { grid-template-columns: 1fr; }
-        }
-
-        /* ========== CTA ========== */
-        .cta {
-            padding: 120px 0;
-            position: relative;
-            overflow: hidden;
-        }
-        .cta-bg {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(139, 92, 246, 0.05));
-            z-index: 0;
-        }
-        .cta .container {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-        }
-        .cta .section-title {
-            font-size: clamp(2rem, 4vw, 3.2rem);
-            margin-bottom: 20px;
-        }
-        .cta .section-subtitle {
-            margin: 0 auto 40px;
-            text-align: center;
-        }
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
 
         /* ========== CONTACT ========== */
         .contact { padding: 120px 0; }
@@ -815,7 +653,7 @@
         }
         .footer-top {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
+            grid-template-columns: 2fr 1fr 1fr;
             gap: 48px;
             margin-bottom: 48px;
         }
@@ -858,13 +696,11 @@
             .hero p { margin: 0 auto 40px; }
             .hero-buttons { justify-content: center; }
             .hero-visual { display: none; }
-            .services-grid { grid-template-columns: repeat(2, 1fr); }
             .process-steps { grid-template-columns: repeat(2, 1fr); }
             .process-steps::before { display: none; }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
             .why .container { grid-template-columns: 1fr; }
             .why-visual { max-width: 500px; }
-            .testimonials-grid { grid-template-columns: 1fr 1fr; }
+            .consult-wrapper { grid-template-columns: 1fr; }
             .contact .container { grid-template-columns: 1fr; }
             .footer-top { grid-template-columns: 1fr 1fr; }
         }
@@ -882,10 +718,7 @@
                 border-bottom: 1px solid rgba(255,255,255,0.05);
             }
             .nav-toggle { display: flex; }
-            .services-grid { grid-template-columns: 1fr; }
             .process-steps { grid-template-columns: 1fr; }
-            .stats-grid { grid-template-columns: 1fr 1fr; }
-            .testimonials-grid { grid-template-columns: 1fr; }
             .why-visual { grid-template-columns: 1fr; }
             .why-card:nth-child(2),
             .why-card:nth-child(2):hover { transform: none; }
@@ -903,9 +736,9 @@
     <div class="container">
         <a href="#" class="logo">Inora<span>.</span></a>
         <div class="nav-links" id="navLinks">
-            <a href="#prosess">Prosess</a>
-            <a href="#konsultasjon">Gratis konsultasjon</a>
             <a href="#hvorfor">Hvorfor oss</a>
+            <a href="#konsultasjon">Gratis konsultasjon</a>
+            <a href="#prosess">Prosess</a>
             <a href="#kontakt">Kontakt</a>
             <a href="#kontakt" class="btn-primary">Kom i gang</a>
         </div>
@@ -971,8 +804,6 @@
         </div>
     </div>
 </section>
-
-
 
 <!-- ===== WHY INORA ===== -->
 <section class="why" id="hvorfor">
@@ -1118,30 +949,6 @@
     </div>
 </section>
 
-<!-- ===== STATS ===== -->
-<section class="stats">
-    <div class="container">
-        <div class="stats-grid">
-            <div class="stat animate-on-scroll">
-                <div class="stat-number gradient-text">50+</div>
-                <div class="stat-label">Prosjekter levert</div>
-            </div>
-            <div class="stat animate-on-scroll">
-                <div class="stat-number gradient-text">70%</div>
-                <div class="stat-label">Gjennomsnittlig tidsbesparelse</div>
-            </div>
-            <div class="stat animate-on-scroll">
-                <div class="stat-number gradient-text">98%</div>
-                <div class="stat-label">Fornøyde kunder</div>
-            </div>
-            <div class="stat animate-on-scroll">
-                <div class="stat-number gradient-text">3x</div>
-                <div class="stat-label">Gjennomsnittlig ROI</div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- ===== CONTACT ===== -->
 <section class="contact" id="kontakt">
     <div class="container">
@@ -1193,20 +1000,12 @@
                     <input type="text" id="company" placeholder="Bedriftsnavn">
                 </div>
                 <div class="form-group">
-                    <label for="service">Hva trenger du hjelp med?</label>
-                    <select id="service">
-                        <option value="">Velg en tjeneste</option>
-                        <option value="automasjon">Prosessautomasjon</option>
-                        <option value="ai">Skreddersydde AI-løsninger</option>
-                        <option value="strategi">AI-rådgivning & strategi</option>
-                        <option value="integrasjon">Systemintegrasjoner</option>
-                        <option value="opplaering">Opplæring & kurs</option>
-                        <option value="annet">Annet</option>
-                    </select>
+                    <label for="subject">Hva trenger du hjelp med?</label>
+                    <input type="text" id="subject" placeholder="F.eks. automatisere fakturabehandling, effektivisere kundeservice...">
                 </div>
                 <div class="form-group">
                     <label for="message">Melding</label>
-                    <textarea id="message" placeholder="Fortell oss litt om hva du ønsker hjelp med..."></textarea>
+                    <textarea id="message" placeholder="Beskriv gjerne litt mer om utfordringen din..."></textarea>
                 </div>
                 <button type="submit" class="submit-btn">Send melding</button>
             </form>
@@ -1226,8 +1025,7 @@
                 <h4>Selskapet</h4>
                 <a href="#hvorfor">Om oss</a>
                 <a href="#prosess">Vår prosess</a>
-                <a href="#">Karriere</a>
-                <a href="#">Blogg</a>
+                <a href="#konsultasjon">Gratis konsultasjon</a>
             </div>
             <div class="footer-col">
                 <h4>Kontakt</h4>
@@ -1281,7 +1079,7 @@
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                target.scrollToView({ behavior: 'smooth', block: 'start' });
             }
         });
     });
@@ -1298,34 +1096,6 @@
             e.target.reset();
         }, 3000);
     }
-
-    // ===== Counter animation for stats =====
-    const statObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const el = entry.target;
-                const text = el.textContent;
-                const match = text.match(/(\d+)/);
-                if (match) {
-                    const target = parseInt(match[0]);
-                    const suffix = text.replace(match[0], '');
-                    let current = 0;
-                    const increment = Math.ceil(target / 40);
-                    const timer = setInterval(() => {
-                        current += increment;
-                        if (current >= target) {
-                            current = target;
-                            clearInterval(timer);
-                        }
-                        el.textContent = current + suffix;
-                    }, 30);
-                }
-                statObserver.unobserve(el);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    document.querySelectorAll('.stat-number').forEach(el => statObserver.observe(el));
 </script>
 
 </body>
