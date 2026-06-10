@@ -551,6 +551,50 @@
                 <a href="https://inorahavbruk.no" target="_blank" rel="noopener" class="project-link">Les mer om prosjektet <span>&rarr;</span></a>
             </div>
         </div>
+        <!-- RemindMe -->
+        <div class="project-card reveal" style="margin-top:40px;">
+            <div class="project-visual" style="background:linear-gradient(135deg, rgba(251,146,60,0.08), rgba(234,88,12,0.06));">
+                <div class="project-mockup">
+                    <div class="mock-browser">
+                        <div class="mock-bar">
+                            <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
+                            <span class="mock-url">remindme.no/dashboard</span>
+                        </div>
+                        <div class="mock-body" style="padding:16px;">
+                            <div style="font-size:0.6rem;font-weight:700;color:#fb923c;margin-bottom:10px;letter-spacing:0.03em;">KOMMENDE FEIRINGER</div>
+                            <div class="rm-row" style="display:flex;align-items:center;gap:10px;padding:8px 10px;background:rgba(251,146,60,0.06);border:1px solid rgba(251,146,60,0.1);border-radius:8px;margin-bottom:6px;">
+                                <div style="width:28px;height:28px;border-radius:50%;background:rgba(251,146,60,0.15);display:flex;align-items:center;justify-content:center;font-size:0.65rem;flex-shrink:0;">&#x1F382;</div>
+                                <div style="flex:1;"><div style="font-size:0.62rem;font-weight:600;color:var(--text-bright);">Astrid Vik</div><div style="font-size:0.52rem;color:var(--text-muted);">Bursdag · om 2 dager</div></div>
+                                <div style="font-size:0.5rem;padding:2px 8px;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.15);border-radius:20px;color:#4ade80;font-weight:600;">Bekreftet</div>
+                            </div>
+                            <div class="rm-row" style="display:flex;align-items:center;gap:10px;padding:8px 10px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.04);border-radius:8px;margin-bottom:6px;">
+                                <div style="width:28px;height:28px;border-radius:50%;background:rgba(139,92,246,0.15);display:flex;align-items:center;justify-content:center;font-size:0.65rem;flex-shrink:0;">&#x1F389;</div>
+                                <div style="flex:1;"><div style="font-size:0.62rem;font-weight:600;color:var(--text-bright);">Marius Hansen</div><div style="font-size:0.52rem;color:var(--text-muted);">5 år i bedriften · om 5 dager</div></div>
+                                <div style="font-size:0.5rem;padding:2px 8px;background:rgba(99,102,241,0.1);border:1px solid rgba(99,102,241,0.15);border-radius:20px;color:#818cf8;font-weight:600;">Sendt</div>
+                            </div>
+                            <div class="rm-row" style="display:flex;align-items:center;gap:10px;padding:8px 10px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.04);border-radius:8px;">
+                                <div style="width:28px;height:28px;border-radius:50%;background:rgba(251,146,60,0.15);display:flex;align-items:center;justify-content:center;font-size:0.65rem;flex-shrink:0;">&#x1F382;</div>
+                                <div style="flex:1;"><div style="font-size:0.62rem;font-weight:600;color:var(--text-bright);">Ingrid Solberg</div><div style="font-size:0.52rem;color:var(--text-muted);">Bursdag · om 8 dager</div></div>
+                                <div style="font-size:0.5rem;padding:2px 8px;background:rgba(251,146,60,0.1);border:1px solid rgba(251,146,60,0.15);border-radius:20px;color:#fb923c;font-weight:600;">Planlagt</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-info">
+                <div class="proj-tag" style="background:rgba(251,146,60,0.1);border-color:rgba(251,146,60,0.2);color:#fb923c;">&#x1F382; SaaS-plattform</div>
+                <h3>RemindMe</h3>
+                <p>En komplett plattform som hjelper bedrifter å huske og feire ansatte. Automatiserte varsler, kakebestilling fra lokale bakerier og levering rett til kontoret — helt uten admin. Integrert med Simployer og andre HR-systemer.</p>
+                <div class="project-tags">
+                    <span>SaaS</span>
+                    <span>HR-integrasjon</span>
+                    <span>Automasjon</span>
+                    <span>Bestilling & levering</span>
+                    <span>Varsler</span>
+                </div>
+                <a href="https://remindme.no" target="_blank" rel="noopener" class="project-link">Besøk remindme.no <span>&rarr;</span></a>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -893,6 +937,22 @@ contactForm.addEventListener('submit', async function(e) {
     }
     btn.disabled = false;
 });
+
+// ===== ANIMATE REMINDME ROWS ON SCROLL =====
+const rmObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.rm-row').forEach((row, i) => {
+                row.style.opacity = '0';
+                row.style.transform = 'translateX(-20px)';
+                row.style.transition = 'all 0.5s cubic-bezier(.16,1,.3,1)';
+                setTimeout(() => { row.style.opacity = '1'; row.style.transform = 'translateX(0)'; }, 200 + i * 150);
+            });
+            rmObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.3 });
+document.querySelectorAll('.project-card:nth-child(2) .mock-body').forEach(el => rmObserver.observe(el));
 
 // ===== ANIMATE CHART BARS ON SCROLL =====
 const chartObserver = new IntersectionObserver((entries) => {
